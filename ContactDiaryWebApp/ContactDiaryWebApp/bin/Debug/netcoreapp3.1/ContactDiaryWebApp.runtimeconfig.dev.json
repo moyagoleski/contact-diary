@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Moya\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Moya\\.nuget\\packages"
+    ]
+  }
+}
