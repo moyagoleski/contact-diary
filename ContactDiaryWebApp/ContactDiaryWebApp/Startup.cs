@@ -1,3 +1,7 @@
+// Author: Moya Goleski
+// File: Startup.cs.cs
+// Last Updated: 01/23/2022
+
 using ContactDiaryWebApp.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,6 +37,8 @@ namespace ContactDiaryWebApp
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+            // AddRazorRuntimeCompilation so cshtml changes are shown
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
         }
 
