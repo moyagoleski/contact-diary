@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using contact_diary.Models;
 
 namespace ContactDiaryWebApp.Data
 {
@@ -12,5 +13,6 @@ namespace ContactDiaryWebApp.Data
             : base(options)
         {
         }
+        public DbSet<contact_diary.Models.Contact> Contact { get; set; }
     }
 }
