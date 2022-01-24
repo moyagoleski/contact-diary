@@ -43,6 +43,8 @@ namespace ContactDiaryWebApp.Controllers
         }
 
         // GET: Contacts/Details/5
+        // security - user has to login
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
