@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ContactDiaryWebApp.Data;
 using contact_diary.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ContactDiaryWebApp.Controllers
 {
@@ -60,6 +61,8 @@ namespace ContactDiaryWebApp.Controllers
         }
 
         // GET: Contacts/Create
+        // security - user has to login
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -68,6 +71,8 @@ namespace ContactDiaryWebApp.Controllers
         // POST: Contacts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // security - user has to login
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Relation,Email,MobileNumber,LandlineNumber")] Contact contact)
@@ -82,6 +87,8 @@ namespace ContactDiaryWebApp.Controllers
         }
 
         // GET: Contacts/Edit/5
+        // security - user has to login
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -100,6 +107,8 @@ namespace ContactDiaryWebApp.Controllers
         // POST: Contacts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // security - user has to login
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,Relation,Email,MobileNumber,LandlineNumber")] Contact contact)
@@ -133,6 +142,8 @@ namespace ContactDiaryWebApp.Controllers
         }
 
         // GET: Contacts/Delete/5
+        // security - user has to login
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -153,6 +164,8 @@ namespace ContactDiaryWebApp.Controllers
         // POST: Contacts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        // security - user has to login
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var contact = await _context.Contact.FindAsync(id);
