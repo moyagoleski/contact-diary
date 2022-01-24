@@ -1,5 +1,5 @@
 // Author: Moya Goleski
-// File: Startup.cs.cs
+// File: Startup.cs
 // Last Updated: 01/23/2022
 
 using ContactDiaryWebApp.Data;

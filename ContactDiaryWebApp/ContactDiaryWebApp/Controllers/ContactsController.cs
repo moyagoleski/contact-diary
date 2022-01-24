@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Author: Moya Goleski
+// File: ContactsController.cs
+// Last Updated: 01/23/2022
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,6 +27,18 @@ namespace ContactDiaryWebApp.Controllers
         public async Task<IActionResult> Index()
         {
             return View(await _context.Contact.ToListAsync());
+        }
+
+        // GET: Contacts/Search
+        public async Task<IActionResult> Search()
+        {
+            return View();
+        }
+
+        // POST: Contacts/SearchResults
+        public async Task<IActionResult> SearchResults(String SearchPhrase)
+        {
+            return View("Index", await _context.Contact.Where( j => j.FirstName.Contains(SearchPhrase)).ToListAsync());
         }
 
         // GET: Contacts/Details/5
