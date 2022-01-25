@@ -1,6 +1,6 @@
 ﻿// Author: Moya Goleski
 // File: ContactsController.cs
-// Last Updated: 01/23/2022
+// Last Updated: 01/24/2022
 
 using System;
 using System.Collections.Generic;
@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using ContactDiaryWebApp.Data;
 using contact_diary.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace ContactDiaryWebApp.Controllers
 {
@@ -27,7 +28,14 @@ namespace ContactDiaryWebApp.Controllers
         // GET: Contacts
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Contact.ToListAsync());
+            //return View(await _context.Contact.ToListAsync());
+
+            var model = await _context.Contact
+                .Where(a => a.ApplicationUser.Id == HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value)
+                .ToListAsync();
+
+            return View(model);
+
         }
 
         // GET: Contacts/Search

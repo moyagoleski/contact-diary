@@ -2,6 +2,7 @@
 // File: Startup.cs
 // Last Updated: 01/24/2022
 
+using contact_diary.Models;
 using ContactDiaryWebApp.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,10 +35,11 @@ namespace ContactDiaryWebApp
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            // services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
             // set to false so user doesn't have to confirm email
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            // services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+
             services.AddControllersWithViews();
             // AddRazorRuntimeCompilation so cshtml changes are shown
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
