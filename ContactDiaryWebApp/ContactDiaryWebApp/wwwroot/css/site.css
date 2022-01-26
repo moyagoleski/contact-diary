@@ -29,6 +29,14 @@ a.navbar-brand {
     font-weight: 500;
 }
 
+a.nav-link {
+    color: #52AB98 !important;
+}
+
+a.nav-link:hover {
+    color: #418979 !important;
+}
+
 /* CONTENT CONTAINER */
 .container-fluid {
     padding-left: 0;

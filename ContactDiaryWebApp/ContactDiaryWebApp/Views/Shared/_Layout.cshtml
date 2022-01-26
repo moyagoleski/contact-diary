@@ -3,6 +3,11 @@
     File: _Layout.cshtml
     Last Updated: 01/25/2022
 -->
+@using contact_diary.Models;
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManage
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,37 +29,46 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-
-                    <!-- login partial before -->
-                    <!--<ul class="navbar-nav flex-grow-1">-->
-
+                    <!-- navbar -->
                     <ul class="navbar-nav">
+                        <!-- link for home -->
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <!--
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-    </li>
-    -->
-                        <!-- link for contacts -->
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Contacts" asp-action="Index">Contacts</a>
-                        </li>
-                        <!-- link for search -->
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Contacts" asp-action="Search">Search</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                                <button type="submit" class="btn btn-outline-primary btn-outline-primary-custom">Logout</button>
-                            </form>
-                        </li>
+                        <!-- if user signed in-->
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <!-- link for contacts -->
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Contacts" asp-action="Index">Contacts</a>
+                            </li>
+                            <!-- link for search -->
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Contacts" asp-action="Search">Search</a>
+                            </li>
+                            <!-- link for logout-->
+                            <li class="nav-item">
+                                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                    <button type="submit" class="btn btn-outline-primary btn-outline-primary-custom">Logout</button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <!-- link for login-->
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                            </li>
+                            <!-- link for register -->
+                            <li class="nav-item">
+                                <a class="btn btn-outline-primary btn-outline-primary-custom" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
         </nav>
+
     </header>
     <div class="container-fluid fill">
         <!--

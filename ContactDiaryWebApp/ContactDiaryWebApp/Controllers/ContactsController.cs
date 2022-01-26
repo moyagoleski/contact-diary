@@ -26,6 +26,7 @@ namespace ContactDiaryWebApp.Controllers
         }
 
         // GET: Contacts
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             //return View(await _context.Contact.ToListAsync());
@@ -39,12 +40,14 @@ namespace ContactDiaryWebApp.Controllers
         }
 
         // GET: Contacts/Search
+        [Authorize]
         public async Task<IActionResult> Search()
         {
             return View();
         }
 
         // POST: Contacts/SearchResults
+        [Authorize]
         public async Task<IActionResult> SearchResults(String SearchPhrase)
         {
             return View("Index", await _context.Contact.Where( j => j.FirstName.Contains(SearchPhrase)).ToListAsync());
