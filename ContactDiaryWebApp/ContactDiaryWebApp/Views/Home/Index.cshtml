@@ -1,8 +1,32 @@
-﻿@{
+﻿<!--
+    Author: Moya Goleski
+    File: Index.cshtml
+    Last Updated: 01/25/2022
+-->
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Container for Home content -->
+<div class="home-container mh-100">
+
+    <div class="text-center align-middle">
+        <!--<h1 class="display-4">Welcome</h1>-->
+        <h1>Take time to <i>ReConnect</i></h1>
+        <p>
+            <i>ReConnect</i> is the Mobile Contact Diary, helping you keep track of your contacts.
+            Open your account in minutes right from your computer, tablet, or smartphone.
+        </p>
+
+
+        <!--
+        TODO:
+            - edit css to look like buttons in _LoginPartial.cshtml
+        -->
+        <partial name="_LoginPartial" />
+
+
+    </div>
+
 </div>
+

@@ -1,16 +1,18 @@
 ﻿<!--
     Author: Moya Goleski
     File: _LoginPartial.cshtml
-    Last Updated: 01/24/2022
+    Last Updated: 01/25/2022
 -->
 @using contact_diary.Models;
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManage
-
+<!--
 <ul class="navbar-nav">
+-->
     @if (SignInManager.IsSignedIn(User))
     {
+        <!--
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
         </li>
@@ -19,14 +21,35 @@
                 <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
             </form>
         </li>
+        -->
+        
+        <a id="login-welcome" title="Manage">Hello,  @User.Identity.Name!</a>
+
+        <!-- TODO: move to future _NavbarPartial.cshtml-->
+        <!--
+        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button type="submit" class="btn btn-outline-primary btn-outline-primary-custom">Logout</button>
+        </form>
+        -->
     }
     else
     {
+
+        <div class="btn-group">
+            <a class="btn btn-primary btn-primary-custom" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            <a class="btn btn-outline-primary btn-outline-primary-custom" asp-area="Identity" asp-page="/Account/Login">Login</a>
+
+        </div>
+
+        <!--
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
         </li>
+        -->
     }
+<!--
 </ul>
+-->
