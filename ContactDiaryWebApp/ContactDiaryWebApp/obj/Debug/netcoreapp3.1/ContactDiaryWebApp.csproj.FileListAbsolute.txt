@@ -454,3 +454,8 @@ C:\Users\Moya\Documents\GitHub\contact-diary\ContactDiaryWebApp\ContactDiaryWebA
 C:\Users\Moya\Documents\GitHub\contact-diary\ContactDiaryWebApp\ContactDiaryWebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 C:\Users\Moya\Documents\GitHub\contact-diary\ContactDiaryWebApp\ContactDiaryWebApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 C:\Users\Moya\Documents\GitHub\contact-diary\ContactDiaryWebApp\ContactDiaryWebApp\obj\Debug\netcoreapp3.1\Razor\Views\Contacts\Search.cshtml.g.cs
+C:\Users\Moya\Documents\GitHub\contact-diary\ContactDiaryWebApp\ContactDiaryWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+C:\Users\Moya\Documents\GitHub\contact-diary\ContactDiaryWebApp\ContactDiaryWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+C:\Users\Moya\Documents\GitHub\contact-diary\ContactDiaryWebApp\ContactDiaryWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
+C:\Users\Moya\Documents\GitHub\contact-diary\ContactDiaryWebApp\ContactDiaryWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Moya\Documents\GitHub\contact-diary\ContactDiaryWebApp\ContactDiaryWebApp\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs

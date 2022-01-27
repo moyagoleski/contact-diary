@@ -1,7 +1,7 @@
 ﻿/*
     Author: Moya Goleski
     File: site.css
-    Last Updated: 01/25/2022
+    Last Updated: 01/26/2022
 */
 
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
@@ -20,9 +20,14 @@ html {
 body {
     position: relative;
     min-height: 100%;
+    background-color: #C8D8E4;
+    padding-bottom: 70px;
 }
 
 /* NAV */
+.navbar {
+    margin-bottom: 2rem;
+}
 a.navbar-brand {
     color: #2B6777 !important;
     font-style: italic;
@@ -45,10 +50,6 @@ a.nav-link:hover {
 
 /* FOOTER */
 footer {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
     padding: 1rem;
     text-align: center;
     background-color: #2B6777;
@@ -58,7 +59,7 @@ footer {
 /* HOME */
 .fill .home-container {
     padding-top: 20vh;
-    min-height: 85vh;
+    min-height: 70vh;
 }
 
 .home-container {

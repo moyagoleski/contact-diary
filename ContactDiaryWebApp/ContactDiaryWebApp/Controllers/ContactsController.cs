@@ -29,13 +29,13 @@ namespace ContactDiaryWebApp.Controllers
         [Authorize]
         public async Task<IActionResult> Index()
         {
-            //return View(await _context.Contact.ToListAsync());
+            return View(await _context.Contact.ToListAsync());
 
-            var model = await _context.Contact
-                .Where(a => a.ApplicationUser.Id == HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value)
-                .ToListAsync();
+            //var model = await _context.Contact
+              //  .Where(a => a.ApplicationUser.Id == HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value)
+              //  .ToListAsync();
 
-            return View(model);
+            //return View(model);
 
         }
 
