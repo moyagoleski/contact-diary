@@ -3,55 +3,59 @@
 @{
     ViewData["Title"] = "Edit";
 }
-
-<h1>Edit</h1>
-
-<h4>Contact</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<!--
+    Author: Moya Goleski
+    File: Edit.cshtml
+    Last Updated: 01/27/2022
+-->
+<div class="row d-flex justify-content-center col-12">
+    <div class="col-sm-5 align-middle">
+        <a asp-action="Index" class="custom-link">Back to List</a>
+        <h1>Edit Contact</h1>
+        <hr />
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
+            <div class="form-row form-group">
+                <div class="col">
+                    <label asp-for="FirstName" class="control-label"></label>
+                    <input asp-for="FirstName" class="form-control" placeholder="First Name" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="LastName" class="control-label"></label>
+                    <input asp-for="LastName" class="form-control" placeholder="Last Name" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row form-group">
+                <div class="col">
+                    <label asp-for="Relation" class="control-label"></label>
+                    <input asp-for="Relation" class="form-control" placeholder="Relation" />
+                    <span asp-validation-for="Relation" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" placeholder="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row form-group">
+                <div class="col">
+                    <label asp-for="MobileNumber" class="control-label"></label>
+                    <input asp-for="MobileNumber" class="form-control" placeholder="Mobile Number" />
+                    <span asp-validation-for="MobileNumber" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="LandlineNumber" class="control-label"></label>
+                    <input asp-for="LandlineNumber" class="form-control" placeholder="Landline Number" />
+                    <span asp-validation-for="LandlineNumber" class="text-danger"></span>
+                </div>
             </div>
             <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Relation" class="control-label"></label>
-                <input asp-for="Relation" class="form-control" />
-                <span asp-validation-for="Relation" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MobileNumber" class="control-label"></label>
-                <input asp-for="MobileNumber" class="form-control" />
-                <span asp-validation-for="MobileNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LandlineNumber" class="control-label"></label>
-                <input asp-for="LandlineNumber" class="form-control" />
-                <span asp-validation-for="LandlineNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary btn-primary-custom" />
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

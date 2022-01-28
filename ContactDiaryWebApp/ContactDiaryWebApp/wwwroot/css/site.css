@@ -74,6 +74,11 @@ a#login-welcome {
     font-size: 1.5rem;
 }
 
+.custom-link {
+    color: #2B6777 !important;
+    float: right !important;
+}
+
 /* BUTTON */
 .btn-group {
     padding-top: 3%;
