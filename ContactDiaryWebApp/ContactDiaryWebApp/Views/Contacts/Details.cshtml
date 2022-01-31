@@ -6,7 +6,7 @@
 <!--
     Author: Moya Goleski
     File: Details.cshtml
-    Last Updated: 01/27/2022
+    Last Updated: 01/31/2022
 -->
 <div class="row d-flex justify-content-center col-12">
     <div class="col-sm-9 col-md-7 align-middle">
@@ -52,5 +52,7 @@
             </dd>
         </dl>
         <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-primary-custom">Edit </a>
+        <a asp-action="Delete" asp-route-id="@Model.Id"  class="btn btn-danger">Delete</a>
+
     </div>
 </div>

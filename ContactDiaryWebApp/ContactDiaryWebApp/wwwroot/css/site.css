@@ -1,7 +1,7 @@
 ﻿/*
     Author: Moya Goleski
     File: site.css
-    Last Updated: 01/27/2022
+    Last Updated: 01/31/2022
 */
 
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
@@ -26,7 +26,7 @@ body {
 
 /* NAV */
 .navbar {
-    margin-bottom: 2rem;
+    margin-bottom: 1.8rem;
 }
 a.navbar-brand {
     color: #2B6777 !important;
@@ -50,7 +50,7 @@ a.nav-link:hover {
 
 /* FOOTER */
 footer {
-    padding: 1rem;
+    padding: 0.8rem;
     text-align: center;
     background-color: #2B6777;
     color: #F2F2F2;
